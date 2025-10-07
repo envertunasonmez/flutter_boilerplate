@@ -10,19 +10,116 @@
 include: package:flutter_lints/flutter.yaml
 
 linter:
-  # The lint rules applied to this project can be customized in the
-  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
-  # included above or to enable additional rules. A list of all available lints
-  # and their documentation is published at https://dart.dev/lints.
-  #
-  # Instead of disabling a lint rule for the entire project in the
-  # section below, it can also be suppressed for a single line of code
-  # or a specific dart file by using the `// ignore: name_of_lint` and
-  # `// ignore_for_file: name_of_lint` syntax on the line or in the file
-  # producing the lint.
   rules:
-    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
-    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+    # --- Core Dart Rules ---
+    always_declare_return_types: true
+    always_put_control_body_on_new_line: true
+    always_put_required_named_parameters_first: false
+    annotate_overrides: true
+    avoid_classes_with_only_static_members: false
+    avoid_dynamic_calls: true
+    avoid_empty_else: true
+    avoid_function_literals_in_foreach_calls: true
+    avoid_print: true
+    avoid_redundant_argument_values: true
+    avoid_relative_lib_imports: true
+    avoid_returning_null_for_future: true
+    avoid_returning_this: true
+    avoid_slow_async_io: true
+    avoid_types_as_parameter_names: true
+    avoid_unnecessary_containers: true
+    avoid_void_async: true
+    cancel_subscriptions: true
+    cascade_invocations: true
+    close_sinks: true
+    comment_references: true
+    control_flow_in_finally: true
+    curly_braces_in_flow_control_structures: true
+    depend_on_referenced_packages: true
+    directives_ordering: true
+    empty_statements: true
+    exhaustive_cases: true
+    file_names: true
+    flutter_style_todos: true
+    implementation_imports: true
+    invariant_booleans: false
+    join_return_with_assignment: true
+    library_prefixes: true
+    lines_longer_than_80_chars: false
+    missing_whitespace_between_adjacent_strings: true
+    no_duplicate_case_values: true
+    no_leading_underscores_for_library_prefixes: true
+    no_leading_underscores_for_local_identifiers: true
+    noop_primitive_operations: false
+    omit_local_variable_types: false
+    only_throw_errors: true
+    overridden_fields: true
+    package_api_docs: false
+    parameter_assignments: false
+    prefer_adjacent_string_concatenation: true
+    prefer_const_constructors: true
+    prefer_const_constructors_in_immutables: true
+    prefer_const_declarations: true
+    prefer_const_literals_to_create_immutables: true
+    prefer_expression_function_bodies: false
+    prefer_final_fields: true
+    prefer_final_in_for_each: true
+    prefer_final_locals: true
+    prefer_for_elements_to_map_fromIterable: true
+    prefer_generic_function_type_aliases: true
+    prefer_if_null_operators: true
+    prefer_initializing_formals: true
+    prefer_interpolation_to_compose_strings: true
+    prefer_relative_imports: true
+    prefer_single_quotes: true
+    provide_deprecation_message: true
+    public_member_api_docs: false
+    require_trailing_commas: true
+    sort_constructors_first: true
+    sort_unnamed_constructors_first: true
+    tighten_type_of_initializing_formals: true
+    type_annotate_public_apis: true
+    unawaited_futures: true
+    unnecessary_await_in_return: true
+    unnecessary_brace_in_string_interps: true
+    unnecessary_const: true
+    unnecessary_final: false
+    unnecessary_late: true
+    unnecessary_library_name: false
+    unnecessary_null_checks: false
+    unnecessary_null_in_if_null_operators: true
+    unnecessary_parenthesis: false
+    unnecessary_this: true
+    use_build_context_synchronously: true
+    use_colored_box: true
+    use_decorated_box: true
+    use_enums: true
+    use_full_hex_values_for_flutter_colors: true
+    use_function_type_syntax_for_parameters: true
+    use_if_null_to_convert_nulls_to_bools: true
+    use_is_even_rather_than_modulo: true
+    use_key_in_widget_constructors: true
+    use_late_for_private_fields_and_variables: true
+    use_rethrow_when_possible: true
+    use_string_buffers: true
+
+analyzer:
+  exclude:
+    - build/**
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/*.config.dart"
+    - "**/*.gr.dart"
+
+  errors:
+    # Treat warnings as errors for stricter CI/CD enforcement
+    missing_return: error
+    dead_code: warning
+    unused_local_variable: warning
+    unnecessary_import: warning
+    invalid_use_of_visible_for_testing_member: error
+    invalid_use_of_protected_member: error
+    depend_on_referenced_packages: ignore
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
